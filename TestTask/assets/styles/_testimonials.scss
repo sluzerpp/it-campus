@@ -211,6 +211,9 @@
   .slider {
     &__bg {
       img {
+        width: 4rem;
+        height: 4rem;
+
         &:nth-child(2) {
           left: 10rem;
           bottom: 8rem;
