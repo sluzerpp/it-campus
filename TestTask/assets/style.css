@@ -597,6 +597,8 @@ button:active {
   height: 100%;
 }
 .slider__bg img {
+  width: 7rem;
+  height: 7rem;
   position: absolute;
 }
 .slider__bg img:nth-child(1) {
@@ -743,6 +745,14 @@ button:active {
 }
 
 @media (max-width: 730px) {
+  .slider__bg img:nth-child(2) {
+    left: 10rem;
+    bottom: 8rem;
+  }
+  .slider__bg img:nth-child(3) {
+    right: 10rem;
+    bottom: 8rem;
+  }
   .testimonials {
     padding: 3rem 0;
   }
