@@ -584,9 +584,37 @@ button:active {
   gap: 2.5rem;
 }
 .testimonials__content {
-  padding: 3rem 0 6.7rem;
+  padding: 3rem 2rem 6.7rem;
 }
 
+.slider__bg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.slider__bg img {
+  position: absolute;
+}
+.slider__bg img:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+.slider__bg img:nth-child(2) {
+  left: 13rem;
+  bottom: 0;
+}
+.slider__bg img:nth-child(3) {
+  right: 13rem;
+  bottom: 0;
+}
+.slider__bg img:nth-child(4) {
+  right: 0;
+  top: 0;
+}
 .slider__view {
   width: 100%;
   overflow: hidden;
