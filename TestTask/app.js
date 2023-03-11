@@ -71,3 +71,23 @@ modalBg.addEventListener('click', toggleModal);
 closeBtn.addEventListener('click', toggleModal);
 openBtn.addEventListener('click', toggleModal);
 
+
+
+const burger = document.querySelector('#burger');
+const burgerBg = document.querySelector('.burger__bg');
+const burgerClose = document.querySelector('.burger__close');
+const burgerMenu = document.querySelector('.burger__menu');
+
+function toggleNav() {
+  burger.classList.toggle('active');
+  document.body.classList.toggle('show-nav');
+}
+
+burger.addEventListener('click', toggleNav);
+burgerClose.addEventListener('click', toggleNav);
+burgerBg.addEventListener('click', toggleNav);
+burgerMenu.addEventListener('click', (event) => {
+  if (event.target.tagName === 'A') {
+    toggleNav();
+  }
+});

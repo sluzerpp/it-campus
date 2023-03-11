@@ -5,6 +5,7 @@
   gap: 10rem;
   align-items: center;
   padding-top: 4.9rem;
+  position: relative;
 
   .burger-btn {
     justify-self: flex-end;
@@ -58,12 +59,32 @@
   background-color: hsla(0, 0%, 100%, 1);
   box-shadow: 0 20px 50px hsla(256, 52%, 82%, 0.3);
 
+  &.active {
+    position: relative;
+
+    span {
+      background-color: transparent;
+
+      &::before {
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+      }
+      &::after {
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+      }
+    }
+  }
+
   span {
     width: 22.5px;
     height: 2px;
     background-color: hsla(260, 19%, 15%, 1);
     border-radius: 2px;
     position: relative;
+    transition: all 0.2s ease-in-out;
 
     &::after,
     &::before {
@@ -74,6 +95,7 @@
       background-color: hsla(260, 19%, 15%, 1);
       border-radius: 2px;
       position: absolute;
+      transition: all 0.2s linear;
     }
 
     &::after {
@@ -86,10 +108,48 @@
   }
 }
 
+.burger__menu {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 15rem;
+  right: 0;
+  padding: 4rem;
+  background-color: #fff;
+  box-shadow: 0 4px 20px hsla(0, 0%, 0%, 0.3);
+  border-radius: 15px;
+  display: flex;
+  z-index: -100;
+  opacity: 0;
+  width: 120%;
+  max-width: 300px;
+  transition: opacity 0.2s ease-in-out;
+
+  .nav__ul {
+    gap: 2rem;
+    flex-direction: column;
+    width: 100%;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.burger__close {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: -1000%;
+  top: -1000%;
+}
+
 @media (max-width: 640px) {
   .burger-btn {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: none;
     border: none;
     background-image: url('./img/mediapolygon.svg');
@@ -115,6 +175,34 @@
         top: -4.5px;
       }
     }
+  }
+
+  .burger__bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(0, 0%, 0%,0.2);
+    opacity: 0;
+    z-index: -100;
+    left: 0;
+    top: 0;
+  }
+
+  .burger__close {
+    overflow: visible;
+    left: auto;
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+    height: 30px;
+    svg {
+      fill: var(--main-color);
+    }
+  }
+
+  .burger__menu {
+    width: 100%;
+    max-width: 100%;
   }
 
   .header__inner {

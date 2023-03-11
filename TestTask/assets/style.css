@@ -22,6 +22,17 @@ html {
 body {
   background-color: hsl(0, 0%, 100%);
 }
+body.show-nav {
+  overflow: hidden;
+}
+body.show-nav .burger__bg {
+  opacity: 1;
+  z-index: 40;
+}
+body.show-nav .burger__menu {
+  z-index: 100;
+  opacity: 1;
+}
 body.show {
   overflow: hidden;
 }
@@ -134,6 +145,7 @@ button:active {
   gap: 10rem;
   align-items: center;
   padding-top: 4.9rem;
+  position: relative;
 }
 .header__inner .burger-btn {
   justify-self: flex-end;
@@ -178,12 +190,29 @@ button:active {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 20px 50px hsla(256, 52%, 82%, 0.3);
 }
+.burger-btn.active {
+  position: relative;
+}
+.burger-btn.active span {
+  background-color: transparent;
+}
+.burger-btn.active span::before {
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+.burger-btn.active span::after {
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
 .burger-btn span {
   width: 22.5px;
   height: 2px;
   background-color: hsl(260, 19%, 15%);
   border-radius: 2px;
   position: relative;
+  transition: all 0.2s ease-in-out;
 }
 .burger-btn span::after, .burger-btn span::before {
   display: block;
@@ -193,6 +222,7 @@ button:active {
   background-color: hsl(260, 19%, 15%);
   border-radius: 2px;
   position: absolute;
+  transition: all 0.2s linear;
 }
 .burger-btn span::after {
   bottom: -7.5px;
@@ -201,10 +231,46 @@ button:active {
   top: -7.5px;
 }
 
+.burger__menu {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 15rem;
+  right: 0;
+  padding: 4rem;
+  background-color: #fff;
+  box-shadow: 0 4px 20px hsla(0, 0%, 0%, 0.3);
+  border-radius: 15px;
+  display: flex;
+  z-index: -100;
+  opacity: 0;
+  width: 120%;
+  max-width: 300px;
+  transition: opacity 0.2s ease-in-out;
+}
+.burger__menu .nav__ul {
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+.burger__menu .nav__ul a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.burger__close {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: -1000%;
+  top: -1000%;
+}
+
 @media (max-width: 640px) {
   .burger-btn {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: none;
     border: none;
     background-image: url("./img/mediapolygon.svg");
@@ -225,6 +291,31 @@ button:active {
   }
   .burger-btn span::before {
     top: -4.5px;
+  }
+  .burger__bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    opacity: 0;
+    z-index: -100;
+    left: 0;
+    top: 0;
+  }
+  .burger__close {
+    overflow: visible;
+    left: auto;
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+  .burger__close svg {
+    fill: var(--main-color);
+  }
+  .burger__menu {
+    width: 100%;
+    max-width: 100%;
   }
   .header__inner {
     display: flex;
