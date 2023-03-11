@@ -36,6 +36,8 @@
     height: 100%;
     
     img {
+      width: 7rem;
+      height: 7rem;
       position: absolute;
 
       &:nth-child(1) {
@@ -206,6 +208,21 @@
 }
 
 @media (max-width: 730px) {
+  .slider {
+    &__bg {
+      img {
+        &:nth-child(2) {
+          left: 10rem;
+          bottom: 8rem;
+        }
+        &:nth-child(3) {
+          right: 10rem;
+          bottom: 8rem;
+        }
+      }
+    }
+  }
+
   .testimonials {
     padding: 3rem 0;
   }
