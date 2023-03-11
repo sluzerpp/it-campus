@@ -1,0 +1,128 @@
+.header__inner {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  width: 100%;
+  gap: 10rem;
+  align-items: center;
+  padding-top: 4.9rem;
+
+  .burger-btn {
+    justify-self: flex-end;
+  }
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.nav {
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  &__ul {
+    display: flex;
+    gap: 4rem;
+  }
+
+  &__item {
+    list-style: none;
+
+    a {
+      color: hsla(232, 3%, 51%, 1);
+      text-decoration: none;
+    }
+
+    &.active {
+      a {
+        color: hsla(230, 15%, 15%, 1);
+      }
+    }
+  }
+}
+
+.burger-btn {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  outline: transparent;
+  border: none;
+  background-color: hsla(0, 0%, 100%, 1);
+  box-shadow: 0 20px 50px hsla(256, 52%, 82%, 0.3);
+
+  span {
+    width: 22.5px;
+    height: 2px;
+    background-color: hsla(260, 19%, 15%, 1);
+    border-radius: 2px;
+    position: relative;
+
+    &::after,
+    &::before {
+      display: block;
+      content: '';
+      width: 22.5px;
+      height: 2px;
+      background-color: hsla(260, 19%, 15%, 1);
+      border-radius: 2px;
+      position: absolute;
+    }
+
+    &::after {
+      bottom: -7.5px;
+    }
+
+    &::before {
+      top: -7.5px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .burger-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    background-image: url('/assets/img/media-polygon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    span {
+      width: 16px;
+      background-color: hsla(0, 0%, 100%, 1);
+  
+      &::after,
+      &::before {
+        width: 16px;
+        background-color: hsla(0, 0%, 100%, 1);
+      }
+
+      &::after {
+        bottom: -4px;
+      }
+  
+      &::before {
+        top: -4.5px;
+      }
+    }
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none;
+  }
+}
