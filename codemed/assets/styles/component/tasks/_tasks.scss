@@ -1,0 +1,159 @@
+.tasks__inner {
+  display: grid;
+  gap: 4rem;
+  padding: 4rem 0 2rem;
+}
+
+.tasks__found {
+  margin-bottom: 3rem
+}
+
+.tasks__list {
+  display: grid;
+  gap: 2rem;
+}
+
+.tasks__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  overflow: hidden;
+
+  .item {
+
+    &__content {
+      padding: 2rem 4rem 3rem;
+    }
+
+    &__info {
+      margin-bottom: 5rem;
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__difficult {
+      --color: #fff;
+      padding: 1rem 3rem;
+      width: min-content;
+      text-transform: uppercase;
+      border: 2px solid var(--color);
+      color: var(--color);
+      border-radius: 20px;
+
+      &--green {
+        --color: #49F379;
+      }
+
+      &--yellow {
+        --color: #E6F349;
+      }
+
+      &--red {
+        --color: #F34949;
+      }
+    }
+
+    &__status {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      background-color: #49F379;
+      padding: 0 1.4rem;
+    }
+
+    &__title {
+      display: block;
+      width: 100%;
+      font-size: 2.4rem;
+      line-height: 28px;
+    }
+
+    &__tags {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__tag {
+      border-radius: 5px;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      background-color: var(--bg-color);
+    }
+  }
+
+  &--blue {
+    .item__status {
+      background-color: #49A2F3;
+    }
+  }
+}
+
+
+.info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.info__icon,
+.tag__icon {
+  width: 24px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: var(--font-color);
+  }
+}
+
+@media (max-width: 640px) {
+  .tasks__item {
+    grid-template-columns: 1fr;
+
+    .item__header {
+      flex-direction: column;
+    }
+
+    .item__title {
+      text-align: center;
+    }
+
+    .item__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .item__info {
+      justify-content: center;
+    }
+
+    .item__tags {
+      justify-content: center;
+    }
+
+    .item__status {
+      writing-mode: horizontal-tb;
+      padding: 5px 0;
+    }
+  }
+}

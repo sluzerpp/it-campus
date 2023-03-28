@@ -1,0 +1,21 @@
+.tags {
+  display: grid;
+  gap: 3rem;
+}
+
+.tags__title {
+  text-transform: uppercase;
+}
+
+.tags__list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tags__item {
+  border: 1px solid #464646;
+  border-radius: 5px;
+  padding: 1rem;
+}

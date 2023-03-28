@@ -1,0 +1,29 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__img {
+  width: 6.2rem;
+  aspect-ratio: 1/1;
+}
+
+.logo__text {
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.logo--big {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.logo--big .logo__img {
+  width: 17.6rem;
+}
+
+.logo--big .logo__text {
+  font-size: 3.6rem;
+}

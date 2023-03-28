@@ -1,0 +1,20 @@
+.form {
+  display: grid;
+  gap: 0;
+  border: 1px solid #565656;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.form .input {
+  border-bottom: 1px solid #565656;
+}
+
+.form .input:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.form .input:last-child {
+  border-radius: 0 0 5px 5px;
+  border-bottom: none;
+}

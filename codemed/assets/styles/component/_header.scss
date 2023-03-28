@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--card-color);
+  font-family: var(--Roboto);
+  padding: 7px 30px;
+  align-items: center;
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

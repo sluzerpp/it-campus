@@ -1,0 +1,46 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.login__card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-color);
+  padding: 6rem 4rem 3rem;
+  border-radius: 10px;
+  place-self: center;
+  gap: 10rem;
+  width: 100%;
+  max-width: calc(41.4rem + 8rem);
+}
+
+.login__content {
+  width: 100%
+}
+
+.login__forgot {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 2.6rem;
+}
+
+.login__signup {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.login .form {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.login .btn {
+  margin-bottom: 3rem;
+}

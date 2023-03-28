@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--Roboto);
+  color: var(--font-color);
+  background: none;
+  border: none;
+}
+
+html {
+  font-size: .625rem;
+  height: 100%;
+  display: grid;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #464646;
+  border-radius: 15px 0 0 15px;
+} 
+
+@media (max-width: 1280px) {
+  html {
+    font-size: .550rem;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: .500rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: .425rem;
+  }
+}
