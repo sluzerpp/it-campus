@@ -28,6 +28,7 @@
 .input input {
   font-size: 2.4rem;
   outline: transparent;
+  color: var(--font-color);
 }
 
 .input img {
@@ -49,6 +50,7 @@
   width: 100%;
   cursor: pointer;
   transition: transform 0.02s ease-in;
+  color: var(--font-color);
 }
 
 .btn:hover {
