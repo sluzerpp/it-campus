@@ -1,0 +1,16 @@
+.example {
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__group {
+    background-color: #363A46;
+    padding: 2rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+  }
+
+  &__data {
+    color: #B5B5B5;
+  }
+}

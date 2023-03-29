@@ -5,9 +5,9 @@
   margin: 0;
   box-sizing: border-box;
   font-family: var(--Roboto);
-  color: var(--font-color);
   background: none;
   border: none;
+  outline: transparent;
 }
 
 html {
@@ -20,6 +20,7 @@ body {
   background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 a {

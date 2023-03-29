@@ -1,0 +1,99 @@
+.description {
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__btn {
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    transition: color .2s ease;
+
+    &:hover {
+      color: #B5B5B5;
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .2s ease;
+
+    svg {
+      fill: var(--font-color);
+      opacity: 0.71;
+    }
+  }
+
+  &__help {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__difficult {
+    --color: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: hsl(var(--color), 88%, 62%);
+    background-color: hsla(var(--color), 26%, 46%, 1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--green {
+      --color: 137;
+    }
+
+    &--yellow {
+      --color: 65;
+    }
+
+    &--red {
+      --color: 0;
+    }
+  }
+
+  &__text {
+    white-space:pre-line;
+    p {
+      color: #B5B5B5;
+    }
+
+    b {
+      opacity: 1;
+      font-weight: 500;
+      color: var(--font-color);
+    }
+  }
+
+  &__examples {
+    display: grid;
+    gap: 3rem;
+
+    b {
+      opacity: 1;
+      font-weight: 500;
+      color: var(--font-color);
+    }
+  }
+}
