@@ -290,6 +290,7 @@ a {
   align-items: center;
   font-weight: 700;
   font-size: 7.2rem;
+  color: var(--font-color);
 }
 .select-lang__block:hover {
   filter: brightness(130%);
@@ -303,6 +304,7 @@ a {
   .select-lang__block {
     aspect-ratio: 1/1;
     height: auto;
+    font-size: 6rem;
   }
 }
 .tags {
